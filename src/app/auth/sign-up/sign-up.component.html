@@ -1,0 +1,21 @@
+<form [formGroup]="signUpForm">
+    <label>
+        Name:
+        <input type="text" formControlName="firstName">
+        <p *ngIf="signUpForm.controls.firstName.errors && signUpForm.controls.firstName.touched"> Name is Required </p>
+    </label>
+    <label>
+        Email:
+        <input type="text" formControlName="email">
+        <p *ngIf="signUpForm.controls.email.errors && signUpForm.controls.email.touched"> Email is Required </p>
+    </label>
+    <label>
+        Password:
+        <input type="password" formControlName="password">
+        <p *ngIf="signUpForm.controls.password.errors && signUpForm.controls.password.touched"> Password is Required
+        </p>
+    </label>
+
+    <button (click)="registerDetails()" [disabled]="!signUpForm.valid || signUpForm.untouched || !signUpForm.dirty">
+        Register </button>
+</form>

@@ -1,0 +1,14 @@
+li {
+  list-style: none;
+  display: inline;
+  a {
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 10px 5px;
+    text-decoration: none;
+  }
+  &.active {
+    border-bottom: 4px solid #4d4d4d;
+  }
+}
