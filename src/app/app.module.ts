@@ -5,11 +5,15 @@ import { AppComponent } from "./app.component";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { fakeBackendProvider } from "./_helpers/fake-backend";
-import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { ErrorInterceptor } from "./_helpers/error.interceptor";
 import { BasicAuthInterceptor } from "./_helpers/basic-auth.interceptor";
+import { HighlightDirective } from "./directives/highlight.directive";
+import { PasswordDirective } from "./directives/password.directive";
+import { AuthModule } from './auth/auth.module';
+
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, RouterModule, HttpClientModule],
+  declarations: [AppComponent, HighlightDirective, PasswordDirective],
+  imports: [BrowserModule, AppRoutingModule, RouterModule, HttpClientModule, AuthModule],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
@@ -17,6 +21,7 @@ import { BasicAuthInterceptor } from "./_helpers/basic-auth.interceptor";
     // provider used to create fake backend
     fakeBackendProvider
   ],
+  exports:[HighlightDirective],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

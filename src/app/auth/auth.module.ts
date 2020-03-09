@@ -11,7 +11,11 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent, SignUpComponent],
+  declarations: [
+    AuthComponent,
+    LoginComponent,
+    SignUpComponent
+  ],
   imports: [
     CommonModule,
     AuthRoutingModule,
