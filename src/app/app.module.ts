@@ -9,16 +9,19 @@ import { ErrorInterceptor } from "./_helpers/error.interceptor";
 import { BasicAuthInterceptor } from "./_helpers/basic-auth.interceptor";
 import { AuthModule } from "./auth/auth.module";
 import { TemplateModule } from "./template/template.module";
+import { LayoutComponent } from "./layout/layout.component";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
     AuthModule,
-    TemplateModule
+    TemplateModule,
+    SharedModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
