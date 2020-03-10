@@ -16,6 +16,8 @@
         </p>
     </label>
 
-    <button (click)="registerDetails()" [disabled]="!signUpForm.valid || signUpForm.untouched || !signUpForm.dirty">
+    <button *ngIf="!showGoBackBtn" (click)="showGoBackBtn = !showGoBackBtn" [disabled]="!signUpForm.valid || signUpForm.untouched || !signUpForm.dirty">
         Register </button>
+
+    <button *ngIf="showGoBackBtn" routerLink="/"> Go back to Initial page to Login </button>
 </form>
