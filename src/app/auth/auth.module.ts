@@ -9,12 +9,18 @@ import { AuthComponent } from "./auth.component";
 import { LoginComponent } from "./login/login.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 import { HttpClientModule } from "@angular/common/http";
+import { HiddenDirective } from "./../directives/hidden.directive";
+import { HighlightDirective } from "../directives/highlight.directive";
+import { PasswordDirective } from "./../directives/password.directive";
 
 @NgModule({
   declarations: [
     AuthComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    HiddenDirective,
+    PasswordDirective,
+    HighlightDirective
   ],
   imports: [
     CommonModule,
@@ -23,6 +29,11 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     HttpClientModule
   ],
-  exports: [HttpClientModule]
+  exports: [
+    HttpClientModule,
+    HiddenDirective,
+    PasswordDirective,
+    HighlightDirective
+  ]
 })
 export class AuthModule {}
