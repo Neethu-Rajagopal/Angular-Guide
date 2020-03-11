@@ -1,0 +1,18 @@
+<h2>Radio highlight template</h2>
+
+<div class="d-flex flex-column">
+    <label>
+        <input type="radio" (click)="selectedRadio('yellow')" />
+        Yellow
+    </label>
+    <label>
+        <input type="radio" (click)="selectedRadio('orange')" />
+        Orange
+    </label>
+    <label>
+        <input type="radio" (click)="selectedRadio('green')" />
+        Green
+    </label>
+</div>
+
+<p [appHighlightRadio]="color" > Text color changes on selecting different radio !!! </p>

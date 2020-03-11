@@ -1,0 +1,9 @@
+li{
+    list-style: none;
+    height: 100px;
+    outline: none;
+    .card{
+        height: 100%;
+        cursor: pointer;
+    }
+}

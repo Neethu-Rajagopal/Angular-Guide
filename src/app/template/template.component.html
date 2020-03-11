@@ -1,0 +1,13 @@
+<h4> Directives List </h4>
+
+<div class="container">
+    <ul class="row">
+        <li class="col-md-3 mb-3" *ngFor="let item of lists;index as i;" [routerLink]="item.route">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -9,11 +9,13 @@ import { ErrorInterceptor } from "./_helpers/error.interceptor";
 import { BasicAuthInterceptor } from "./_helpers/basic-auth.interceptor";
 import { AuthModule } from "./auth/auth.module";
 import { TemplateModule } from "./template/template.module";
-import { LayoutComponent } from "./layout/layout.component";
 import { SharedModule } from "./shared/shared.module";
+import { HomeComponent } from './home/home.component';
+import { PipesAppModule } from './pipes-app/pipes-app.module';
+import { FirstLetterCapitalPipe } from './pipes/firstLetterCapital.pipe';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent],
+  declarations: [AppComponent, HomeComponent, FirstLetterCapitalPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,7 +23,8 @@ import { SharedModule } from "./shared/shared.module";
     HttpClientModule,
     AuthModule,
     TemplateModule,
-    SharedModule
+    SharedModule,
+    PipesAppModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
