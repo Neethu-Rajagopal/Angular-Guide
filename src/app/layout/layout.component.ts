@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  sentence : string = "sahfdjsadf dudsfdfb fydsgfdsbfvdf";
+
   constructor() { }
 
   ngOnInit(): void {
